@@ -60,6 +60,29 @@ body {
   }
 }
 
+.menu-container {
+  height: 1000px;
+}
+.menu-button {
+  display: block;
+  margin: 50px auto 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+.menu {
+  display: block;
+  background-color: #333;
+  margin: 0 auto;
+  width: 200px;
+  // height: 200px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  // position: absolute;
+
+}
+
 ////////////////////////////////
 // Modal Module
 .modal {
@@ -70,14 +93,14 @@ body {
   left: 0;
   z-index: 999;
   background-color: rgba(#000, 0.5);
-  
+
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  
+
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0.35s, opacity 0.35s linear;
-  
+
   &.modal--open {
     visibility: visible;
     opacity: 1;
@@ -111,7 +134,7 @@ body {
   cursor: pointer;
   background: #F34261;
   color: #fff;
-  
+
   &:before {
     content: '\2715';
   }

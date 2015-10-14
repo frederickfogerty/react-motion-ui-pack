@@ -5,6 +5,37 @@ import Measure from 'react-measure';
 
 import './main.scss';
 
+class Menu extends Component {
+  state = { open: false }
+  render () {
+    return (
+      <div className='menu-container'>
+        <button
+          onClick={() => this.setState({open: !this.state.open})}
+          className='menu-button'
+        >
+          {this.state.open ? 'Close' : 'Open'}
+        </button>
+        <Transition
+          onlyChild
+          enter={{
+            height: 'auto'
+          }}
+          leave={{
+            height: 0
+          }}
+        >
+          {this.state.open &&
+            <div className='menu'>
+              There should be some content here
+            </div>
+          }
+        </Transition>
+      </div>
+    )
+  }
+}
+
 class Todo extends Component {
   _handleDelete(index) {
     this.props.onDelete(index);
@@ -97,7 +128,7 @@ class Modal extends Component {
           <i>+</i>
         </button>
         <aside className={modalClasses}>
-          <Transition 
+          <Transition
             onlyChild={true}
             enter={{
               opacity: 1,
@@ -129,6 +160,7 @@ class App extends Component {
     return(
       <div>
         <ToDos />
+        <Menu />
         <Modal />
       </div>
     );
